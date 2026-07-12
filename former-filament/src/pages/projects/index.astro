@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { withBase } from "../../lib/url";
+
+const projects = (await getCollection("projects")).sort((a, b) => {
+  const orderA = a.data.order ?? Number.MAX_SAFE_INTEGER;
+  const orderB = b.data.order ?? Number.MAX_SAFE_INTEGER;
+  if (orderA !== orderB) return orderA - orderB;
+  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+});
+---
+
+<BaseLayout
+  title="Projects"
+  description="Selected projects and case studies — Astro Keel."
+>
+  <section class="page-head section">
+    <p class="eyebrow">Projects</p>
+    <h1>Selected projects.</h1>
+    <p class="lead">Software engineering projects I've built.</p>
+  </section>
+
+  <section class="section" aria-label="Selected projects">
+    <div class="work-list">
+      {
+        projects.map((project) => (
+          <article class="work-card">
+            <p class="entry-meta">{project.data.tech.join(" / ")}</p>
+            <h2>
+              <a href={withBase(`/projects/${project.id}/`)}>
+                {project.data.title}
+              </a>
+            </h2>
+            <p>{project.data.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

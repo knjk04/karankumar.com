@@ -1,0 +1,36 @@
+---
+title: "AWS ECS Secret Rotation"
+description: "A Terraform module to redeploy an AWS ECS service whenever particular AWS secrets rotate."
+thumbnail: ./media/code-reading-kit.jpg
+tech:
+  - AWS
+  - Terraform
+  - Open Source
+order: 3
+publishDate: 2026-07-12
+---
+
+## Brief
+
+A common problem (see [here](https://stackoverflow.com/questions/74881145/aws-ecs-service-needs-redeployment-to-read-secrets) and [here](https://stackoverflow.com/questions/64322045/need-to-restart-the-aws-ecs-fargate-containers-when-there-is-an-update-in-the-se)) that developers (and possibly yourself) have encountered is needing to redeploy/restart an AWS ECS service whenever an AWS secret rotates.
+This is because if you're using AWS secrets as environment variables for your ECS service, those environment variable values are fixed at the point of
+deployment.
+
+This is problematic for rotating secrets. In my case with Epilogue, my AWS RDS database credential secret rotated regularly, so my backend was
+unable to successfully authorise with my database because it was using old credentials.
+
+AWS have a [guide](https://aws.amazon.com/blogs/infrastructure-and-automation/restart-amazon-ecs-tasks-with-aws-lambda-and-aws-cloudformation-custom-resources/) for restarting AWS services using their CloudFormation template, but I didn't find any existing Terraform modules to help with this. So, I made one!
+
+## How to use it
+
+See the [Terraform module page](https://registry.terraform.io/modules/epilogue-club/ecs-secret-rotation/aws/latest) for instructions on how to use it and
+the argument reference.
+
+You can also find the project on [GitHub](https://github.com/epilogue-club/terraform-aws-ecs-secret-rotation).
+
+## Alternatives
+
+I've documented alternative and a simpler approach in the [GitHub README](https://github.com/epilogue-club/terraform-aws-ecs-secret-rotation#alternatives).
+If you can, I'd recommend having your service re-fetch the AWS secret value it needs at runtime when required.
+
+At the time, I thought my Terraform module approach would be simpler, but in retrospect, it wasn't. I also would go for that approach.
