@@ -6,7 +6,7 @@ import satori from 'satori';
 import sharp from 'sharp';
 import { SITE } from '../../../consts';
 
-// Build-time generated Open Graph images for every blog post and work entry,
+// Build-time generated Open Graph images for every blog post and project entry,
 // rendered in the theme's light palette (see global.css tokens). The static
 // `public/og.jpg` remains the site-wide fallback for all other pages.
 
@@ -18,7 +18,7 @@ interface OgProps {
 
 export const getStaticPaths = (async () => {
   const blog = await getCollection('blog', ({ data }) => !data.draft);
-  const works = await getCollection('works');
+  const projects = await getCollection('projects');
   return [
     ...blog.map((entry) => ({
       params: { collection: 'blog', slug: entry.id },
@@ -28,12 +28,12 @@ export const getStaticPaths = (async () => {
         kind: 'Blog',
       } satisfies OgProps,
     })),
-    ...works.map((entry) => ({
-      params: { collection: 'works', slug: entry.id },
+    ...projects.map((entry) => ({
+      params: { collection: 'projects', slug: entry.id },
       props: {
         title: entry.data.title,
         description: entry.data.description,
-        kind: 'Work',
+        kind: 'Project',
       } satisfies OgProps,
     })),
   ];
