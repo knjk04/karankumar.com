@@ -543,6 +543,12 @@ pre code {
   --pagefind-ui-font: var(--font-body);
 }
 
+#search .pagefind-ui__search-input:focus-visible {
+  border-color: var(--color-accent);
+  outline: none;
+  box-shadow: none;
+}
+
 .search-fallback {
   margin: 0;
   border: var(--hairline);
