@@ -24,10 +24,10 @@ npm run preview  # preview the production build
 ```
 src/
   consts.ts          # site name, description, nav, footer
-  content/           # works/ and blog/ Markdown & MDX entries
+  content/           # projects/ and writing/ Markdown & MDX entries
   content.config.ts  # collection schemas (Content Layer API)
   layouts/           # BaseLayout (head, nav, theme toggle)
-  pages/             # routes: /, /about, /works, /blog, tags, rss.xml
+  pages/             # routes: /, /about, /projects, /writing, tags, rss.xml
   styles/            # global.css design tokens
 astro.config.mjs     # site URL, integrations, Shiki config
 ```
