@@ -6,7 +6,7 @@ import Pagination from "../../../../components/Pagination.astro";
 import { withBase } from "../../../../lib/url";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = await getCollection("writing", ({ data }) => !data.draft);
   const allTags = [...new Set(posts.flatMap((post) => post.data.tags))];
   return allTags.flatMap((tag) => {
     const taggedPosts = posts
@@ -53,7 +53,7 @@ const pageTitle =
     : `Posts tagged “${tag}” · Page ${page.currentPage}`;
 ---
 
-<BaseLayout title={pageTitle} description={`Blog posts tagged ${tag}.`}>
+<BaseLayout title={pageTitle} description={`Posts tagged ${tag}.`}>
   <section class="page-head section">
     <p class="eyebrow">Tag</p>
     <h1>{tag}</h1>
@@ -63,11 +63,11 @@ const pageTitle =
   <section class="section content-index" aria-label={`${tag} posts`}>
     <div class="index-sidebar">
       <p class="eyebrow">More tags</p>
-      <nav class="tag-cloud" aria-label="Other blog tags">
-        <a href={withBase("/blog/")}>All posts</a>
+      <nav class="tag-cloud" aria-label="Other writing tags">
+        <a href={withBase("/writing/")}>All posts</a>
         {
           otherTags.map((item) => (
-            <a href={withBase(`/blog/tags/${item}/`)}>{item}</a>
+            <a href={withBase(`/writing/tags/${item}/`)}>{item}</a>
           ))
         }
       </nav>
@@ -86,7 +86,7 @@ const pageTitle =
                 <span>{post.data.tags.join(" / ")}</span>
               </div>
               <h2>
-                <a href={withBase(`/blog/${post.id}/`)}>{post.data.title}</a>
+                <a href={withBase(`/writing/${post.id}/`)}>{post.data.title}</a>
               </h2>
               <p>{post.data.description}</p>
             </article>
