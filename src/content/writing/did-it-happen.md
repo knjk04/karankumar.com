@@ -39,5 +39,8 @@ You may now think this is far-fetched (and that I’m being paranoid) and that n
 
 It seems to me that memories strengthen by number. The more people that confirm your memory, the greater your conviction in it becomes. And if we rely on others to confirm our memories, would we lose the ability to trust own memories if others deny it?
 
+<!-- vale Vale.Spelling = NO -->
+
 Photo by <a href="https://unsplash.com/@sarandywestfall_photo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">sarandy westfall</a> on <a href="https://unsplash.com/photos/several-portraits-on-top-of-white-textile-qqd8APhaOg4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
+<!-- vale Vale.Spelling = YES -->
