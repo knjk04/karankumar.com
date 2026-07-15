@@ -68,3 +68,9 @@ that will kill one person instead of the original five. It's
 interesting because different people have different ethical views
 that would affect what the best course of action is (to act or not).
 You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Trolley_problem).
+
+<!-- vale Vale.Spelling = NO -->
+
+Photo by <a href="https://unsplash.com/@priscilladupreez?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Priscilla Du Preez 🇨🇦</a> on <a href="https://unsplash.com/photos/two-people-holding-gray-mugs-at-table-K8XYGbw4Ahg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+<!-- vale Vale.Spelling = YES -->
