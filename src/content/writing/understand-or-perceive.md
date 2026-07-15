@@ -2,7 +2,7 @@
 title: Do we understand or do we perceive?
 publishDate: 2020-07-07
 description: Do we really understand things or do we think we do?
-heroImage: ./media/memories.jpg
+heroImage: ./media/understanding.jpg
 draft: false
 ---
 
