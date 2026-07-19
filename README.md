@@ -14,9 +14,9 @@ Prerequisites: Node.js 22+ and npm.
 
 ```bash
 npm install
-npm run dev      # start the dev server at http://localhost:4321
-npm run build    # build the static site to ./dist
-npm run preview  # preview the production build
+npm run dev # start the dev server at http://localhost:4321
+npm run build # build the static site to ./dist
+npm run preview # preview the production build
 ```
 
 ## Project structure
