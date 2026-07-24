@@ -6,21 +6,34 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section class="page-head section">
     <p class="eyebrow">About</p>
 
-    <h1>
-      <span>Software Engineer</span>
-    </h1>
+    <div class="about-intro">
+      <div>
+        <h1>
+          <span>Software Engineer</span>
+        </h1>
 
-    <p class="lead">
-      Hi, I'm Karan! I'm a software engineer from London with a strong interest
-      in scalable and reliable systems, reading, AI safety and Effective
-      Altruism.
-      <br />
-      I'm building <a href="https://epilogue.club/">Epilogue Club</a>, a book
-      discovery platform that helps you find your next book.
-      <br />
-      Outside of work, I enjoy reading, exploring new restaurants in London and meeting
-      people in the Effective Altruism community.
-    </p>
+        <p class="lead">
+          Hi, I'm Karan! I'm a software engineer from London with a strong
+          interest in scalable and reliable systems, reading, AI safety and
+          Effective Altruism.
+        </p>
+
+        <p class="lead">
+          I'm building <a href="https://epilogue.club/">Epilogue Club</a>, a
+          book discovery platform that helps you find your next book.
+        </p>
+
+        <p class="lead">
+          Outside of work, I enjoy reading, exploring new restaurants in London
+          and meeting people in the Effective Altruism community.
+        </p>
+      </div>
+
+      <img
+        class="about-portrait"
+        src="/media/leela-leaning-back-pre-welcome.png"
+      />
+    </div>
   </section>
 
   <section class="section prose-grid">
@@ -88,3 +101,32 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </div>
   </section> -->
 </BaseLayout>
+
+<style>
+  .about-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 400px);
+    align-items: start;
+    gap: clamp(2rem, 6vw, 6rem);
+  }
+
+  .about-portrait {
+    width: 100%;
+    max-width: 400px;
+    object-fit: cover;
+    justify-self: end;
+    object-position: center 60%;
+    /* aspect-ratio: 3 /4; */
+  }
+
+  @media (max-width: 760px) {
+    .about-intro {
+      grid-template-columns: 1fr;
+    }
+
+    .about-portrait {
+      max-width: 360px;
+      justify-self: start;
+    }
+  }
+</style>
