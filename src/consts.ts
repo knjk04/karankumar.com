@@ -13,7 +13,7 @@ export const SITE = {
   /** Default social share image, relative to the site root (see public/). */
   ogImage: '/og.jpg',
   /** Footer credit line. */
-  footerText: `© ${currentYear} Karan Kumar. All rights reserved.`,
+  footerText: `© ${currentYear} Karan Kumar`,
 } as const;
 
 /** Header navigation. `href` is relative to the site root; the configured
