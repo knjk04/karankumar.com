@@ -724,6 +724,10 @@ pre code {
   border-bottom: var(--hairline);
 }
 
+.note-row:last-child {
+  border-bottom: 0;
+}
+
 .note-row:not(:has(img)) {
   grid-template-columns: 1fr;
 }
