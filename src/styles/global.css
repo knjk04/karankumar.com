@@ -894,6 +894,33 @@ pre code {
   }
 }
 
-.no-wrap {
-  white-space: nowrap;
+.prose table {
+  width: 100%;
+  margin-block: calc(var(--baseline) * 1.5);
+  border-collapse: collapse;
+  border-top: var(--hairline);
+  font-size: 0.95rem;
+}
+
+.prose th,
+.prose td {
+  padding: 0.75rem 1rem;
+  border-bottom: var(--hairline);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  background: var(--color-soft);
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.prose th:last-child,
+.prose td:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
