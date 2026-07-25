@@ -1,7 +1,7 @@
 
 ---
 title: Living in the most peaceful time in human history
-publishDate: 2026-07-13
+publishDate: 2020-07-13
 description: Steven Pinker's look into a history of violence throughout history
 heroImage: ./media/war.jpg
 draft: false
