@@ -599,6 +599,20 @@ pre code {
   padding-left: 1.2rem;
 }
 
+.prose li {
+  padding-left: 0.25rem;
+  line-height: 1.65;
+}
+
+.prose li + li {
+  margin-top: 0.65rem;
+}
+
+.prose ul li::marker {
+  color: var(--color-accent);
+  font-size: 0.75em;
+}
+
 .prose pre {
   margin-block: calc(var(--baseline) * 1.5);
 }
